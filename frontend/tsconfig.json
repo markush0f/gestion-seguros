@@ -7,8 +7,15 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "baseUrl": "./src",  
+    "paths": {
+      "@/*": ["*"],
+      "@services/*": ["services/*"], 
+    }
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

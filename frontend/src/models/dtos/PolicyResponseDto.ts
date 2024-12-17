@@ -1,4 +1,4 @@
-export class ResponsePolicyDto {
+export class PolicyResponseDto {
     id: number;
     customerID: number;
     policyType: string;

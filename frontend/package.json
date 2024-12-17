@@ -12,12 +12,14 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.2",
-    "mysql": "^2.18.1",
+    "inversify": "^6.2.0",
+    "mysql2": "^3.11.5",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@types/inversify": "^2.0.32",
     "@types/node": "^22.10.2",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",

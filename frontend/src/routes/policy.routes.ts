@@ -5,3 +5,5 @@ const policyRouter = Router();
 const policyController = new PolicyController();
 
 policyRouter.post("/", policyController.savePolicy);
+
+export default policyRouter;
