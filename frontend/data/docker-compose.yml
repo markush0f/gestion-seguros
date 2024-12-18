@@ -5,7 +5,7 @@ services:
     image: mysql:8.0
     container_name: mysql_container
     environment:
-      MYSQL_ROOT_PASSWORD: 1234 # Cambia esto por una contraseña más segura
+      MYSQL_ROOT_PASSWORD: 1234 
       MYSQL_DATABASE: test 
       MYSQL_USER: user 
       MYSQL_PASSWORD: 12345
@@ -22,4 +22,4 @@ networks:
     driver: bridge
 
 volumes:
-  mysql_data: # Persistencia de los datos de MySQL
+  mysql_data: 
