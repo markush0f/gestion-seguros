@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { container } from "../inversify.config";
+import { container } from "../container.config";
 import { PolicyController } from "../controllers/policy.controller";
 import { TYPES } from "../types";
 

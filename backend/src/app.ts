@@ -4,7 +4,8 @@ import { myDataSource } from './app-data-source';
 import { PolicyController } from './controllers/policy.controller';
 import { Policy } from './models/entities/policy.entity';
 import { TYPES } from './types';
-import { container } from './inversify.config';
+import { container } from './container.config';
+import { scopePerRequest } from 'awilix-express';
 
 
 // console.log(apiRoutes)
@@ -17,9 +18,8 @@ import { container } from './inversify.config';
 const app = express();
 const PORT = 3000;
 
-console.log("Container: ",container.isBound(TYPES.PolicyController));
-
 app.use(express.json());
+app.use(scopePerRequest(container));
 app.use('/api/v1', apiRoutes);
 
 app.get('/api/v1', (req: Request, res: Response) => {
