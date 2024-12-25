@@ -1,22 +1,26 @@
 import express, { Request, Response } from 'express';
 import apiRoutes from './routes/index';
-import { myDataSource } from './app-data-source';
-import { PolicyController } from './controllers/policy.controller';
-import { Policy } from './models/entities/policy.entity';
-import { TYPES } from './types';
 import { container } from './container.config';
 import { scopePerRequest } from 'awilix-express';
-
+import { myDataSource } from './app-data-source';
 
 // console.log(apiRoutes)
 // CONTAINER
 // https://keyyuki.medium.com/building-maintainable-and-scalable-express-applications-with-clean-architecture-a9d4609886c3
 
-// export const createApp = () => {
-
-
 const app = express();
 const PORT = 3000;
+
+
+myDataSource
+  .initialize()
+  .then(() => {
+    console.log('Data source initialized');
+  })
+  .catch((error) => {
+    console.error('Error initializing data source', error);
+  });
+
 
 app.use(express.json());
 app.use(scopePerRequest(container));
